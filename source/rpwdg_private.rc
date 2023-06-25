@@ -18,9 +18,7 @@ FILETYPE VFT_APP
     {
       VALUE "CompanyName", "IltonS"
       VALUE "FileVersion", "1.0.0.0"
-      VALUE "FileDescription", "Simple random password generator.
-
-"
+      VALUE "FileDescription", "Simple password generator."
       VALUE "InternalName", ""
       VALUE "LegalCopyright", "IltonS"
       VALUE "LegalTrademarks", "MIT License"

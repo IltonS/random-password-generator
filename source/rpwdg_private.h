@@ -12,9 +12,7 @@
 #define VER_BUILD	0
 #define COMPANY_NAME	"IltonS"
 #define FILE_VERSION	"1.0.0.0"
-#define FILE_DESCRIPTION	"Simple random password generator.
-
-"
+#define FILE_DESCRIPTION	"Simple password generator."
 #define INTERNAL_NAME	""
 #define LEGAL_COPYRIGHT	"IltonS"
 #define LEGAL_TRADEMARKS	"MIT License"
