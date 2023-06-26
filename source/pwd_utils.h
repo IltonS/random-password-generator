@@ -25,4 +25,7 @@ char randomChar();
 // A function to generate a random password of a given length with some criteria and no consecutive characters
 std::string randomPassword(int length, bool useDigit, bool useUpper, bool useLower, bool useSpecial);
 
+// A function to determine how strong a password is based on its length and criteria
+std::string passwordStrength(std::string password);
+
 #endif

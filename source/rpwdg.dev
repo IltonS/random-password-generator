@@ -23,13 +23,13 @@ OverrideOutputName=rpwdg.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
-CommandLine=-L 4
+CommandLine=-L 16 -u -s -d
 Folders=
 IncludeVersionInfo=1
 SupportXPThemes=0
-CompilerSet=4
-CompilerSettings=0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
-UnitCount=7
+CompilerSet=1
+CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
+UnitCount=6
 
 [VersionInfo]
 Major=1
@@ -102,16 +102,6 @@ BuildCmd=
 
 [Unit6]
 FileName=args_parser.h
-CompileCpp=1
-Folder=
-Compile=1
-Link=1
-Priority=1000
-OverrideBuildCmd=0
-BuildCmd=
-
-[Unit7]
-FileName=globals.cpp
 CompileCpp=1
 Folder=
 Compile=1

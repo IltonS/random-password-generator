@@ -26,6 +26,7 @@ int main(int argc, char* argv[]) {
 		// Generate and display a random password with some criteria and no consecutive characters
 		string password = randomPassword(glb::length, glb::useDigit, glb::useUpper, glb::useLower, glb::useSpecial);
 		cout << "Your random password is: " <<  password << endl;
+		cout << "The password strength is: " << passwordStrength(password) << endl;
 	} else {
 		// Print an error message using cerr
 		cerr << "Invalid password length. It must be between 4 and 16." << endl;

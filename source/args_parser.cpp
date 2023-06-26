@@ -99,10 +99,11 @@ void parseArgs(int argc, char* argv[]) {
 			} // for
 		}
 		else { // Otherwise, it is an invalid flag
-			// Print an error message using cerr and exit the program
+			// Print an error message using cerr
 			std::cerr << "Invalid flag: " << argv[i] << std::endl;
-			// Print a help message and exit the program
-				printHelp();
+			
+			// Print a help message and exit the program	
+			printHelp();
 			exit(1);
 		}
 	} // for
