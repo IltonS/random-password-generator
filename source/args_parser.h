@@ -4,7 +4,9 @@
 #pragma once
 
 #include "globals.h"
+#include "install_utils.h"
 #include <iostream>
+#include <windows.h>
 
 // Print a help message
 void printHelp();

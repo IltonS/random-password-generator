@@ -33,7 +33,8 @@ void parseArgs(int argc, char* argv[]) {
 	
 	// Loop through the arguments and parse them according to their flags
 	for (int i = 1; i < argc; i++) {		
-		if (strcmp(argv[i], "-h") == 0) { // Check if it is a flag for help	
+		// Check if it is a flag for help	
+		if (strcmp(argv[i], "-h") == 0) { 
 			// Print a help message and exit the program
 			printHelp();
 			exit(0);
@@ -44,6 +45,40 @@ void parseArgs(int argc, char* argv[]) {
 			// Print the program version and exit the program
 			printVersion();
 			exit(0);
+		}
+		
+		//Check if it is a flag for install
+		if (strcmp(argv[i], "/install") == 0) {
+			// Get the full path of the executable
+		    char buffer[MAX_PATH] = { 0 };
+		    GetModuleFileName(NULL, buffer, MAX_PATH);
+		
+		    // Get the parent path of the executable, which is the actual directory
+		    std::string exePath(buffer);
+		    std::string dirPath = exePath.substr(0, exePath.find_last_of("\\/"));
+		    
+			//Add app directory to path
+			if (addDirectoryToPath(dirPath)) 
+				exit(0);
+			else
+				exit(1);
+		}
+		
+		//Check if it is a flag for uninstall
+		if (strcmp(argv[i], "/uninstall") == 0) {
+			// Get the full path of the executable
+		    char buffer[MAX_PATH] = { 0 };
+		    GetModuleFileName(NULL, buffer, MAX_PATH);
+		
+		    // Get the parent path of the executable, which is the actual directory
+		    std::string exePath(buffer);
+		    std::string dirPath = exePath.substr(0, exePath.find_last_of("\\/"));
+			
+			//Remove app directory from path
+			if (removeDirectoryFromPath(dirPath)) 
+				exit(0);
+			else
+				exit(1);
 		}
 		
 		// Check if it is a flag for length

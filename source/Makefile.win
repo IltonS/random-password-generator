@@ -5,14 +5,14 @@ CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 RES      = ../lib/rpwdg_private.res
-OBJ      = ../lib/main.o ../lib/pwd_utils.o ../lib/args_parser.o $(RES)
-LINKOBJ  = ../lib/main.o ../lib/pwd_utils.o ../lib/args_parser.o $(RES)
+OBJ      = ../lib/main.o ../lib/pwd_utils.o ../lib/args_parser.o ../lib/install_utils.o $(RES)
+LINKOBJ  = ../lib/main.o ../lib/pwd_utils.o ../lib/args_parser.o ../lib/install_utils.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib" -L"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
 INCS     = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"C:/Program Files (x86)/Embarcadero/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
 BIN      = ../bin/rpwdg.exe
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+CXXFLAGS = $(CXXINCS) -g3 -std=c++17
+CFLAGS   = $(INCS) -g3 -std=c++17
 DEL      = C:\Program Files (x86)\Embarcadero\Dev-Cpp\DevCpp.exe INTERNAL_DEL
 
 .PHONY: all all-before all-after clean clean-custom
@@ -33,6 +33,9 @@ $(BIN): $(OBJ)
 
 ../lib/args_parser.o: args_parser.cpp
 	$(CPP) -c args_parser.cpp -o ../lib/args_parser.o $(CXXFLAGS)
+
+../lib/install_utils.o: install_utils.cpp
+	$(CPP) -c install_utils.cpp -o ../lib/install_utils.o $(CXXFLAGS)
 
 ../lib/rpwdg_private.res: rpwdg_private.rc 
 	$(WINDRES) -i rpwdg_private.rc --input-format=rc -o ../lib/rpwdg_private.res -O coff 

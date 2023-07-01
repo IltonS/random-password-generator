@@ -13,7 +13,7 @@ Compiler=
 CppCompiler=
 Linker=
 IsCpp=1
-Icon=
+Icon=rpwdg.ico
 ExeOutput=..\bin
 ObjectOutput=..\lib
 LogOutput=
@@ -23,13 +23,13 @@ OverrideOutputName=rpwdg.exe
 HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
-CommandLine=-L 16 -u -s -d
+CommandLine=/uninstall
 Folders=
 IncludeVersionInfo=1
 SupportXPThemes=0
 CompilerSet=1
 CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0
-UnitCount=6
+UnitCount=8
 
 [VersionInfo]
 Major=1
@@ -102,6 +102,26 @@ BuildCmd=
 
 [Unit6]
 FileName=args_parser.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=install_utils.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=install_utils.h
 CompileCpp=1
 Folder=
 Compile=1
