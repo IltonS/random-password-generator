@@ -91,8 +91,19 @@ bool removeDirectoryFromPath(const std::string& dir) {
    	// Remove the directory from the PATH
    	size_t end = pos + dir.length();
    	
+   	// If the directory is at the beginning of the PATH, remove the following semicolon
+   	if (pos == 0 && end < path.length() && path[end] == ';') {
+    	end++;
+   	}
+   	
+   	// If the directory is at the end of the PATH, remove the preceding semicolon
+   	if (pos > 0 && pos + dir.length() == path.length() && path[pos - 1] == ';') {
+    	pos--;
+   	}
+   	
+   	// Remove the trailing semicolon
 	if (end < path.length() && path[end] == ';') {
-    	end++; // Remove the trailing semicolon
+    	end++; 
    	}
    	
    	path.erase(pos, end - pos);
