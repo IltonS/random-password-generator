@@ -6,6 +6,7 @@
 #include "globals.h"
 #include "install_utils.h"
 #include <iostream>
+#include <string>
 #include <windows.h>
 
 // Print a help message

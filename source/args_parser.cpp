@@ -1,25 +1,37 @@
 #include "args_parser.h"
 
+// Define the documentation as a multi-line string literal
+const std::string doc = R"(
+rpwdg - Random Password Generator
+
+Description:
+  rpwdg is a command line app that generates random passwords of various lengths and
+  characters. It can be used to create secure and unique passwords for different accounts
+  or purposes.
+
+Usage:
+  rpwdg (-h|-v|-L <length> [-u][-d][-s]...)
+
+Arguments:
+  length  Specify the length of the password, between 4 and 16.
+
+Options:
+  -h, --help    Show this help message and exit.
+  -v, --version Show the app version and exit.
+  -L, --length  Use this option to specify the length of the password.
+  -u, --upper   Include uppercase letters in the password.
+  -d, --digits  Include digits in the password.
+  -s, --special Include special characters in the password.
+)";
+
 // Print a help message
-void printHelp() {
-	std::string appName = "rpwdg";
-	
-	std::cout << "Usage: " << appName << " -L <length> [-d] [-u] [-s] || ";
-	std::cout <<  appName << " -L <length> -[d][u][s] || ";
-	std::cout <<  appName << " -h || ";
-	std::cout <<  appName << " -v " << std::endl;
-	std::cout << "Options:" << std::endl;
-	std::cout << "-L <length> : Specify the password length (must be between 4 and 16)" << std::endl;
-	std::cout << "-d : Use digits in the password" << std::endl;
-	std::cout << "-u : Use uppercase letters in the password" << std::endl;
-	std::cout << "-s : Use special characters in the password" << std::endl;
-	std::cout << "-h : Show this help message and exit" << std::endl;
-	std::cout << "-v : Show the program version and exit" << std::endl;
-}
+void printHelp(){
+	std::cout << doc << std::endl;
+} 
 
 // Print the program version
 void printVersion() {
-	std::cout << "Random Password Generator v1.0" << std::endl;
+	std::cout << "Random Password Generator v1.0.0.0" << std::endl;
 }
 
 //Parse the application params
