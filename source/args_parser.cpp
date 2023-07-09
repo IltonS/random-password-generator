@@ -1,15 +1,7 @@
 #include "args_parser.h"
 
 // Define the documentation as a multi-line string literal
-const std::string doc = R"(
-rpwdg - Random Password Generator
-
-Description:
-  rpwdg is a command line app that generates random passwords of various lengths and
-  characters. It can be used to create secure and unique passwords for different accounts
-  or purposes.
-
-Usage:
+const std::string usage = R"(Usage:
   rpwdg (-h|-v|-L <length> [-u][-d][-s]...)
 
 Arguments:
@@ -24,9 +16,20 @@ Options:
   -s, --special Include special characters in the password.
 )";
 
+const std::string doc = R"(rpwdg - Random Password Generator
+
+Description:
+  rpwdg is a command line app that generates random passwords of various lengths and
+  characters. It can be used to create secure and unique passwords for different accounts
+  or purposes.
+)";
+
 // Print a help message
-void printHelp(){
-	std::cout << doc << std::endl;
+void printHelp(bool complete){
+	if (complete)
+		std::cout << doc << std::endl << usage << std::endl;
+	else
+		std::cout << usage << std::endl;
 } 
 
 // Print the program version
@@ -46,14 +49,14 @@ void parseArgs(int argc, char* argv[]) {
 	// Loop through the arguments and parse them according to their flags
 	for (int i = 1; i < argc; i++) {		
 		// Check if it is a flag for help	
-		if (strcmp(argv[i], "-h") == 0) { 
+		if ((strcmp(argv[i], "-h") == 0)  || (strcmp(argv[i], "--help") == 0)){ 
 			// Print a help message and exit the program
-			printHelp();
+			printHelp(true);
 			exit(0);
 		}
 		
 		// Check if it is a flag for version
-		if (strcmp(argv[i], "-v") == 0) {
+		if ((strcmp(argv[i], "-v") == 0) || (strcmp(argv[i], "--version") == 0)) {
 			// Print the program version and exit the program
 			printVersion();
 			exit(0);
@@ -94,7 +97,7 @@ void parseArgs(int argc, char* argv[]) {
 		}
 		
 		// Check if it is a flag for length
-		if (strcmp(argv[i], "-L") == 0) {
+		if ((strcmp(argv[i], "-L") == 0) || (strcmp(argv[i], "--length") == 0)) {
 			// Check if there is another argument after this flag
 			if (i + 1 < argc) {
 				// Convert it to an integer and store it in length variable
@@ -110,15 +113,15 @@ void parseArgs(int argc, char* argv[]) {
 				exit(1);
 			}
 		}
-		else if (strcmp(argv[i], "-d") == 0) { // Check if it is a flag for digit
+		else if ((strcmp(argv[i], "-d") == 0) || (strcmp(argv[i], "--digits") == 0)){ // Check if it is a flag for digit
 			// Set the useDigit variable to true
 			glb::useDigit = true;
 		}
-		else if (strcmp(argv[i], "-u") == 0) { // Check if it is a flag for upper
+		else if ((strcmp(argv[i], "-u") == 0) || (strcmp(argv[i], "--upper") == 0)) { // Check if it is a flag for upper
 			// Set the useUpper variable to true
 			glb::useUpper = true;
 		}
-		else if (strcmp(argv[i], "-s") == 0) { // Check if it is a flag for special
+		else if ((strcmp(argv[i], "-s") == 0) || (strcmp(argv[i], "--special") == 0)) { // Check if it is a flag for special
 			// Set the useSpecial variable to true
 			glb::useSpecial = true;
 		}

@@ -10,7 +10,7 @@
 #include <windows.h>
 
 // Print a help message
-void printHelp();
+void printHelp(bool complete = false);
 
 // Print the program version
 void printVersion();
