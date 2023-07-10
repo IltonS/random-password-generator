@@ -32,4 +32,4 @@ Examples:
 Note: The order and grouping of the -u, -d, and -s options do not matter. For example, rpwdg -L 4 -u -d is equivalent to rpwdg -L 4 -ud.
 
 More information:
-  For more detailed documentation, see the README file or visit https://github.com/user/rpwdg
+  For more detailed documentation, see the README file or visit https://github.com/IltonS/random-password-generator

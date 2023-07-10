@@ -25,7 +25,7 @@ FILETYPE VFT_APP
       VALUE "LegalCopyright", "IltonS"
       VALUE "LegalTrademarks", "MIT License"
       VALUE "OriginalFilename", "rpwdg.exe"
-      VALUE "ProductName", "Random password genrator"
+      VALUE "ProductName", "Random password generator"
       VALUE "ProductVersion", "1"
     }
   }

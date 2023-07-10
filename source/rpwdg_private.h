@@ -17,7 +17,7 @@
 #define LEGAL_COPYRIGHT	"IltonS"
 #define LEGAL_TRADEMARKS	"MIT License"
 #define ORIGINAL_FILENAME	"rpwdg.exe"
-#define PRODUCT_NAME	"Random password genrator"
+#define PRODUCT_NAME	"Random password generator"
 #define PRODUCT_VERSION	"1"
 
 #endif /*RPWDG_PRIVATE_H*/
